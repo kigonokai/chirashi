@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.chirashi'
+    namespace 'com.kigo.chirashi'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.chirashi"
+        applicationId "com.kigo.chirashi"
         minSdk 26
         targetSdk 34
         versionCode 1
