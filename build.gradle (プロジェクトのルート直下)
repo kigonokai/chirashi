@@ -1,0 +1,5 @@
+buildscript {
+    ext.android_compile_sdk = 34
+}
+
+// （以下、既存の plugins や共通設定の記述が続きます）
