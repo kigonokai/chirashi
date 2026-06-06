@@ -3,32 +3,14 @@ package com.kigo.chirashi;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity implements UiController.UiEventListener {
-
+public class MainActivity extends AppCompatActivity {
     private UiController uiController;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void Bundle(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.id.activity_main);
+        setContentView(R.layout.activity_main);
 
-        uiController = new UiController(this, this);
-        uiController.initializeUi();
-    }
-
-    @Override
-    public void onStarClicked() {
-    }
-
-    @Override
-    public void onHeartClicked() {
-    }
-
-    @Override
-    public void onImageClicked() {
-    }
-
-    @Override
-    public void onDownloadClicked() {
+        uiController = new UiController(this);
     }
 }
