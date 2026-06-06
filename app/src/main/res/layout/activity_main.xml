@@ -32,7 +32,50 @@
             android:id="@+id/btnStar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Star"
+            android:layout_marginBottom="12dp"
+            android:text="☆"
+            android:textSize="24sp"
+            android:background="@drawable/selector_btn_background"
+            android:textColor="@android:color/white"
+            android:focusable="true"
+            android:clickable="true" />
+
+        <Button
+            android:id="@+id/btnHeart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="❤"
+            android:textSize="24sp"
+            android:background="@drawable/selector_btn_background"
+            android:textColor="@android:color/white"
+            android:focusable="true"
+            android:clickable="true" />
+
+        <Button
+            android:id="@+id/btnGallery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🖼️"
+            android:textSize="24sp"
+            android:background="@drawable/selector_btn_background"
+            android:textColor="@android:color/white"
+            android:focusable="true"
+            android:clickable="true" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btnDown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⏬️"
+            android:textSize="24sp"
+            android:background="@drawable/selector_btn_background"
+            android:textColor="@android:color/white"
             android:focusable="true"
             android:clickable="true" />
     </LinearLayout>
