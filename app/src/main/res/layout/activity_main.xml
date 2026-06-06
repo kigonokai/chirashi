@@ -10,6 +10,8 @@
         android:id="@+id/mainContentArea"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:focusable="true"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/buttonArea"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +32,9 @@
             android:id="@+id/btnStar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Star" />
+            android:text="Star"
+            android:focusable="true"
+            android:clickable="true" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

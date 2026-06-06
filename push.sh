@@ -1,24 +1,26 @@
 
-GITHUB_USER="kigonokai"
-# トークンはここには書かず、環境変数（Termuxの一時メモリ）から読み込む
-GITHUB_TOKEN="$GH_TOKEN"
-REPO_NAME="chirashi"
+# 現在のブランチ名を取得（デフォルトはmaster）
+BRANCH=$(git branch --show-current)
+if [ -z "$BRANCH" ]; then
+    BRANCH="master"
+fi
 
-REMOTE_URL="https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/${GITHUB_USER}/${REPO_NAME}.git"
-
-# 送信先URLを毎回最新の状態に更新
-git remote remove origin 2>/dev/null
-git remote add origin "$REMOTE_URL"
-
+# 1. 変更されたファイルをすべてステージング
 git add .
 
-echo -n "コミットメッセージを入力してください（空欄なら 'Update code'）: "
+# 2. ユーザーに入力してもらったメッセージでコミット
+# 入力が空の場合はデフォルトのメッセージを使用
+echo "コミットメッセージを入力してください（空欄の場合は 'Auto commit update'）:"
 read COMMIT_MSG
-MSG=${COMMIT_MSG:-"Update code"}
 
-git commit -m "$MSG"
+if [ -z "$COMMIT_MSG" ]; then
+    COMMIT_MSG="Auto commit update"
+fi
 
-echo "GitHubへ送信中..."
-git push -u origin master
+git commit -m "$COMMIT_MSG"
 
-echo "送信が完了しました！"
+# 3. 指定されたリモートブランチへ直接プッシュ
+echo "GitHubへプッシュしています ($BRANCH ブランチ)..."
+git push origin "$BRANCH"
+
+echo "プッシュが完了しました！"
