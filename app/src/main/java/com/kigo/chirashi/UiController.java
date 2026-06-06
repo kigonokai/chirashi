@@ -9,7 +9,13 @@ public class UiController {
 
     public UiController(AppCompatActivity activity) {
         this.activity = activity;
-        initViews();
+        // 画面の読み込みが完全に安全に終わるのを待ってからビューを初期化する
+        activity.getWindow().getDecorView().post(new Runnable() {
+            @Override
+            public void run() {
+                initViews();
+            }
+        });
     }
 
     private void initViews() {
