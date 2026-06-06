@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
     private UiController uiController;
 
+    // Force update for GitHub Actions trigger: 2026-06-06
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
